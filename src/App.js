@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import Header from "./components/Header";
+import Slides from "./components/Slides";
+
+import data from "./data/slides";
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Slide Show App using React JS</h1>
+        <Header />
+        <Slides slides={data} />
       </div>
     );
   }
