@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 
 export default class Slides extends Component {
-  renderSlides = () => {
-    return this.props.slides.map((slide, index) => {
-      return <h2 key={slide.id}>{slide.title}</h2>;
-    });
+  renderSlide = () => {
+    return <h2>{this.props.slides[this.props.index].title}</h2>;
   };
 
   render() {
-    return <div>{this.renderSlides()}</div>;
+    return <div>{this.renderSlide()}</div>;
   }
 }
