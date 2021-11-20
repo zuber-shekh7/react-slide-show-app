@@ -40,23 +40,32 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <Button
-          disabled={this.state.index === 0 ? true : false}
-          title="Reset"
-          handleClick={this.resetSlides}
-        />
-        <Button
-          disabled={this.state.index - 1 < 0 ? true : false}
-          title="Prev"
-          handleClick={this.prevSlide}
-        />
-        <Button
-          disabled={
-            this.state.index + 1 > this.state.slides.length - 1 ? true : false
-          }
-          title="Next"
-          handleClick={this.nextSlide}
-        />
+        <div className="row">
+          <div className="col-md-8 mx-auto">
+            <div className="container text-center my-4">
+              <Button
+                disabled={this.state.index - 1 < 0 ? true : false}
+                title="Prev"
+                handleClick={this.prevSlide}
+              />
+              <Button
+                disabled={this.state.index === 0 ? true : false}
+                title="Reset"
+                handleClick={this.resetSlides}
+              />
+              <Button
+                disabled={
+                  this.state.index + 1 > this.state.slides.length - 1
+                    ? true
+                    : false
+                }
+                title="Next"
+                handleClick={this.nextSlide}
+              />
+            </div>
+          </div>
+        </div>
+
         <Slides
           slides={this.state.slides}
           index={this.state.index}
